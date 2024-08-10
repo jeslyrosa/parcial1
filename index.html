@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Cuenta</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Monotype+Corsiva&display=swap');
+
+        body {
+            font-family: 'Monotype Corsiva', cursive;
+            background-color: #ffe6f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            border: 2px solid #ff66a3;
+        }
+        h2 {
+            text-align: center;
+            color: #d14782;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #d14782;
+        }
+        .form-group input, 
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ff66a3;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #333;
+            background-color: #ffe6f0;
+        }
+        .form-group input[type="radio"] {
+            width: auto;
+            margin-right: 5px;
+        }
+        .form-group .radio-label {
+            display: inline-block;
+            margin-right: 10px;
+            color: #d14782;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff66a3;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .form-group button:hover {
+            background-color: #d14782;
+        }
+    </style>
+    <script>
+        function submitForm(event) {
+            event.preventDefault(); // Evita que el formulario se envíe automáticamente
+            alert("Sus datos fueron guardados.");
+            window.location.href = window.location.href; // Recarga la página actual
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <h2>Registro de Cuenta</h2>
+    <form onsubmit="submitForm(event)">
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="form-group">
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required>
+        </div>
+        <div class="form-group">
+            <label for="genero">Género:</label>
+            <label class="radio-label">
+                <input type="radio" id="genero-masculino" name="genero" value="masculino" required> Masculino
+            </label>
+            <label class="radio-label">
+                <input type="radio" id="genero-femenino" name="genero" value="femenino" required> Femenino
+            </label>
+            <label class="radio-label">
+                <input type="radio" id="genero-otro" name="genero" value="otro" required> Otro
+            </label>
+        </div>
+        <div class="form-group">
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" name="usuario" required>
+        </div>
+        <div class="form-group">
+            <label for="contraseña">Contraseña:</label>
+            <input type="password" id="contraseña" name="contraseña" required>
+        </div>
+        <div class="form-group">
+            <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required>
+        </div>
+        <div class="form-group">
+            <label for="dia-semana">Día de la Semana Favorito:</label>
+            <select id="dia-semana" name="dia-semana" required>
+                <option value="lunes">Lunes</option>
+                <option value="martes">Martes</option>
+                <option value="miercoles">Miércoles</option>
+                <option value="jueves">Jueves</option>
+                <option value="viernes">Viernes</option>
+                <option value="sabado">Sábado</option>
+                <option value="domingo">Domingo</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <button type="submit">Guardar</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
